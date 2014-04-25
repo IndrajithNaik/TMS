@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TRACTOR_DATABASE" Class="DataTractorShowroomNewDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=TRACTOR_DATABASE;Integrated Security=True" SettingsObjectName="DataBaseLayer.Properties.Settings" SettingsPropertyName="TRACTOR_DATABASEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BALANCE" Member="BALANCEs">
+    <Type Name="BALANCE">
+      <Column Name="BALANCE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AMOUNT_PAID" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PAID_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SALES_INVOICE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SALES_INVOICE_BALANCE" Member="SALES_INVOICE" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="SALES_INVOICE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VILLAGES" Member="VILLAGEs">
+    <Type Name="VILLAGE">
+      <Column Name="VILLAGE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VILLAGE_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TALUK_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="VILLAGE_CUSTOMER" Member="CUSTOMERs" ThisKey="VILLAGE_ID" OtherKey="VILLAGE_ID" Type="CUSTOMER" />
+      <Association Name="TALUK_VILLAGE" Member="TALUK" ThisKey="TALUK_ID" OtherKey="TALUK_ID" Type="TALUK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VILLAGE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CONTACT_NO_1" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CONTACT_NO_2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CUSTOMER_ADDRESS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CUSTOMER_DELIVERY_CHALAN" Member="DELIVERY_CHALANs" ThisKey="CUSTOMER_ID" OtherKey="CUSTOMER_ID" Type="DELIVERY_CHALAN" />
+      <Association Name="CUSTOMER_SALES_INVOICE" Member="SALES_INVOICEs" ThisKey="CUSTOMER_ID" OtherKey="CUSTOMER_ID" Type="SALES_INVOICE" />
+      <Association Name="VILLAGE_CUSTOMER" Member="VILLAGE" ThisKey="VILLAGE_ID" OtherKey="VILLAGE_ID" Type="VILLAGE" IsForeignKey="true" />
+      <Association Name="MASTER_CUSTOMER" Member="MASTER" ThisKey="STATUS_ID" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DELIVERY_CHALAN" Member="DELIVERY_CHALANs">
+    <Type Name="DELIVERY_CHALAN">
+      <Column Name="DC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DC_NO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SALES_INVOICE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DC_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HYPOTHETICATION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_DC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CUSTOMER_DELIVERY_CHALAN" Member="CUSTOMER" ThisKey="CUSTOMER_ID" OtherKey="CUSTOMER_ID" Type="CUSTOMER" IsForeignKey="true" />
+      <Association Name="SALES_INVOICE_DELIVERY_CHALAN" Member="SALES_INVOICE" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="SALES_INVOICE" IsForeignKey="true" />
+      <Association Name="TRACTOR_PURCHASE_DELIVERY_CHALAN" Member="TRACTOR_PURCHASE" ThisKey="TRACTOR_ID" OtherKey="TRACTOR_ID" Type="TRACTOR_PURCHASE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DISTRICTS" Member="DISTRICTs">
+    <Type Name="DISTRICT">
+      <Column Name="DISTRICT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DISTRICT_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DISTRICT_TALUK" Member="TALUKs" ThisKey="DISTRICT_ID" OtherKey="DISTRICT_ID" Type="TALUK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INVOICE" Member="INVOICEs">
+    <Type Name="INVOICE">
+      <Column Name="INVOICE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="INVOICE_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="INVOICE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INVOICE_DISCOUNT" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="INVOICE_VAT_PERCENT" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="INVOICE_GRANDTOTAL" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="EXPENDITURE_ON_SUBTOAL" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PURCHASE_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="INVOICE_SPARE_PURCHASES_SALE" Member="SPARE_PURCHASES_SALEs" ThisKey="INVOICE_ID" OtherKey="INVOICE_ID" Type="SPARE_PURCHASES_SALE" />
+      <Association Name="INVOICE_TRACTOR_PURCHASE" Member="TRACTOR_PURCHASEs" ThisKey="INVOICE_ID" OtherKey="INVOICE_ID" Type="TRACTOR_PURCHASE" />
+      <Association Name="MASTER_INVOICE" Member="MASTER" ThisKey="PURCHASE_TYPE" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JOB_CARDS" Member="JOB_CARDs">
+    <Type Name="JOB_CARD">
+      <Column Name="JOBCARD_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TRACTOR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SALES_INVOICE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_MOBILESERVICE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SERVICECLINIC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_PAID" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_ACCEDENTAL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SERIAL_NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ESTIMATED_COST" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="REPEAT_FIR_DETAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SERVICE_COUPON_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ESTIMATED_DELIVERY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATETIME_IN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SERVICE_STARTDATETIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SERVICE_ENDDATETIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRACTOR_APPLICATION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="JOB_CARD_JOB_COMPLAINT" Member="JOB_COMPLAINTs" ThisKey="JOBCARD_ID" OtherKey="JOBCARD_ID" Type="JOB_COMPLAINT" />
+      <Association Name="JOB_CARD_JOB_TRACTOR_CUSTOMER" Member="JOB_TRACTOR_CUSTOMERs" ThisKey="JOBCARD_ID" OtherKey="JOBCARD_ID" Type="JOB_TRACTOR_CUSTOMER" />
+      <Association Name="JOB_CARD_SERVICE_CHARGE" Member="SERVICE_CHARGEs" ThisKey="JOBCARD_ID" OtherKey="JOBCARD_ID" Type="SERVICE_CHARGE" />
+      <Association Name="SALES_INVOICE_JOB_CARD" Member="SALES_INVOICE" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="SALES_INVOICE" IsForeignKey="true" />
+      <Association Name="TRACTOR_PURCHASE_JOB_CARD" Member="TRACTOR_PURCHASE" ThisKey="TRACTOR_ID" OtherKey="TRACTOR_ID" Type="TRACTOR_PURCHASE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JOB_COMPLAINTS" Member="JOB_COMPLAINTs">
+    <Type Name="JOB_COMPLAINT">
+      <Column Name="COMPLAINT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JOBCARD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTUAL_COMPLAINT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTION_TAKEN" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LABOUR_CHARGES" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="JOB_CARD_JOB_COMPLAINT" Member="JOB_CARD" ThisKey="JOBCARD_ID" OtherKey="JOBCARD_ID" Type="JOB_CARD" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JOB_TRACTOR_CUSTOMERS" Member="JOB_TRACTOR_CUSTOMERs">
+    <Type Name="JOB_TRACTOR_CUSTOMER">
+      <Column Name="JOBTRACTOR_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JOBCARD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENGINE_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CHASSIS_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HMR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMER_ADDRESS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_NO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DATEOF_INSTALLATION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="JOB_CARD_JOB_TRACTOR_CUSTOMER" Member="JOB_CARD" ThisKey="JOBCARD_ID" OtherKey="JOBCARD_ID" Type="JOB_CARD" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MASTER" Member="MASTERs">
+    <Type Name="MASTER">
+      <Column Name="MASTER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MASTER_VALUE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MASTER_PARENT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MASTER_CUSTOMER" Member="CUSTOMERs" ThisKey="MASTER_ID" OtherKey="STATUS_ID" Type="CUSTOMER" />
+      <Association Name="MASTER_INVOICE" Member="INVOICEs" ThisKey="MASTER_ID" OtherKey="PURCHASE_TYPE" Type="INVOICE" />
+      <Association Name="MASTER_SALES_INVOICE" Member="SALES_INVOICEs" ThisKey="MASTER_ID" OtherKey="SELL_TYPE" Type="SALES_INVOICE" />
+      <Association Name="MASTER_SPARE_PART" Member="SPARE_PARTs" ThisKey="MASTER_ID" OtherKey="SPARE_STATUS" Type="SPARE_PART" />
+      <Association Name="MASTER_SPARE_PURCHASES_SALE" Member="SPARE_PURCHASES_SALEs" ThisKey="MASTER_ID" OtherKey="TRANSACTION_TYPE" Type="SPARE_PURCHASES_SALE" />
+      <Association Name="MASTER_SUPPLIER" Member="SUPPLIERs" ThisKey="MASTER_ID" OtherKey="SUPPLIER_STATUS" Type="SUPPLIER" />
+      <Association Name="MASTER_SUPPLIER1" Member="SUPPLIERs1" ThisKey="MASTER_ID" OtherKey="SUPPLIER_TYPE" Type="SUPPLIER" />
+      <Association Name="MASTER_TRACTOR_MODEL" Member="TRACTOR_MODELs" ThisKey="MASTER_ID" OtherKey="TRACTOR_STATUS" Type="TRACTOR_MODEL" />
+      <Association Name="MASTER_TRACTOR_PART" Member="TRACTOR_PARTs" ThisKey="MASTER_ID" OtherKey="PART_TYPE" Type="TRACTOR_PART" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OLD_TRACTORS" Member="OLD_TRACTORs">
+    <Type Name="OLD_TRACTOR">
+      <Column Name="OLDTRACTOR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_MAKE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_MODEL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_REGISTRATION_NO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_YEAR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_RCBOOK_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRACTOR_EMPLIMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PURCHASE_COST" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="SELLING_COST" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_EXCHANGE_MODELID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TRACTOR_MODEL_OLD_TRACTOR" Member="TRACTOR_MODEL1" ThisKey="TRACTOR_EXCHANGE_MODELID" OtherKey="TRACTOR_MODEL_ID" Type="TRACTOR_MODEL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SALES_INVOICES" Member="SALES_INVOICEs">
+    <Type Name="SALES_INVOICE">
+      <Column Name="SALES_INVOICE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INVOICE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="INVOICE_DISCOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="INVOICE_VAT_PERCENT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="INVOICE_GRANDTOTAL" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SELL_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SALES_INVOICE_BALANCE" Member="BALANCEs" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="BALANCE" />
+      <Association Name="SALES_INVOICE_DELIVERY_CHALAN" Member="DELIVERY_CHALANs" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="DELIVERY_CHALAN" />
+      <Association Name="SALES_INVOICE_JOB_CARD" Member="JOB_CARDs" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="JOB_CARD" />
+      <Association Name="SALES_INVOICE_SPARE_PURCHASES_SALE" Member="SPARE_PURCHASES_SALEs" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="SPARE_PURCHASES_SALE" />
+      <Association Name="CUSTOMER_SALES_INVOICE" Member="CUSTOMER" ThisKey="CUSTOMER_ID" OtherKey="CUSTOMER_ID" Type="CUSTOMER" IsForeignKey="true" />
+      <Association Name="MASTER_SALES_INVOICE" Member="MASTER" ThisKey="SELL_TYPE" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SERVICE_CHARGES" Member="SERVICE_CHARGEs">
+    <Type Name="SERVICE_CHARGE">
+      <Column Name="SERVICE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JOBCARD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SERVICE_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REMARKS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="JOB_CARD_SERVICE_CHARGE" Member="JOB_CARD" ThisKey="JOBCARD_ID" OtherKey="JOBCARD_ID" Type="JOB_CARD" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SPARE_PARTS" Member="SPARE_PARTs">
+    <Type Name="SPARE_PART">
+      <Column Name="SPARE_PART_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SPARE_PART_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SPARE_PART_DESCRIPTION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SPARE_MINLEVEL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SPARE_BIN_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SPARE_STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SPARE_PART_SPARE_PURCHASES_SALE" Member="SPARE_PURCHASES_SALEs" ThisKey="SPARE_PART_ID" OtherKey="SPARE_PART_ID" Type="SPARE_PURCHASES_SALE" />
+      <Association Name="SPARE_PART_SPARE_RATE" Member="SPARE_RATEs" ThisKey="SPARE_PART_ID" OtherKey="SPARE_PART_ID" Type="SPARE_RATE" />
+      <Association Name="MASTER_SPARE_PART" Member="MASTER" ThisKey="SPARE_STATUS" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SPARE_PURCHASES_SALES" Member="SPARE_PURCHASES_SALEs">
+    <Type Name="SPARE_PURCHASES_SALE">
+      <Column Name="SPARE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SPARE_PART_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INVOICE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPLIER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRANSACTION_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUB_TOTAL" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="SALES_INVOICE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MASTER_SPARE_PURCHASES_SALE" Member="MASTER" ThisKey="TRANSACTION_TYPE" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+      <Association Name="SPARE_PART_SPARE_PURCHASES_SALE" Member="SPARE_PART" ThisKey="SPARE_PART_ID" OtherKey="SPARE_PART_ID" Type="SPARE_PART" IsForeignKey="true" />
+      <Association Name="INVOICE_SPARE_PURCHASES_SALE" Member="INVOICE" ThisKey="INVOICE_ID" OtherKey="INVOICE_ID" Type="INVOICE" IsForeignKey="true" />
+      <Association Name="SALES_INVOICE_SPARE_PURCHASES_SALE" Member="SALES_INVOICE" ThisKey="SALES_INVOICE_ID" OtherKey="SALES_INVOICE_ID" Type="SALES_INVOICE" IsForeignKey="true" />
+      <Association Name="SUPPLIER_SPARE_PURCHASES_SALE" Member="SUPPLIER" ThisKey="SUPPLIER_ID" OtherKey="SUPPLIER_ID" Type="SUPPLIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SPARE_RATES" Member="SPARE_RATEs">
+    <Type Name="SPARE_RATE">
+      <Column Name="SPARE_RATE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SPARE_PART_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPLIER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SPARE_RATE_VALUE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="SPARE_PART_SPARE_RATE" Member="SPARE_PART" ThisKey="SPARE_PART_ID" OtherKey="SPARE_PART_ID" Type="SPARE_PART" IsForeignKey="true" />
+      <Association Name="SUPPLIER_SPARE_RATE" Member="SUPPLIER" ThisKey="SUPPLIER_ID" OtherKey="SUPPLIER_ID" Type="SUPPLIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SUPPLIER" Member="SUPPLIERs">
+    <Type Name="SUPPLIER">
+      <Column Name="SUPPLIER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SUPPLIER_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPLIER_CONTACT_NO" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPLIER_ADDRESS" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPLIER_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPLIER_STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SUPPLIER_SPARE_PURCHASES_SALE" Member="SPARE_PURCHASES_SALEs" ThisKey="SUPPLIER_ID" OtherKey="SUPPLIER_ID" Type="SPARE_PURCHASES_SALE" />
+      <Association Name="SUPPLIER_SPARE_RATE" Member="SPARE_RATEs" ThisKey="SUPPLIER_ID" OtherKey="SUPPLIER_ID" Type="SPARE_RATE" />
+      <Association Name="SUPPLIER_TRACTOR_MODEL" Member="TRACTOR_MODELs" ThisKey="SUPPLIER_ID" OtherKey="SUPPLIER_ID" Type="TRACTOR_MODEL" />
+      <Association Name="MASTER_SUPPLIER" Member="MASTER" ThisKey="SUPPLIER_STATUS" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+      <Association Name="MASTER_SUPPLIER1" Member="MASTER1" ThisKey="SUPPLIER_TYPE" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TALUKS" Member="TALUKs">
+    <Type Name="TALUK">
+      <Column Name="TALUK_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DISTRICT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TALUK_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TALUK_VILLAGE" Member="VILLAGEs" ThisKey="TALUK_ID" OtherKey="TALUK_ID" Type="VILLAGE" />
+      <Association Name="DISTRICT_TALUK" Member="DISTRICT" ThisKey="DISTRICT_ID" OtherKey="DISTRICT_ID" Type="DISTRICT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRACTOR_MODELS" Member="TRACTOR_MODELs">
+    <Type Name="TRACTOR_MODEL">
+      <Column Name="TRACTOR_MODEL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SUPPLIER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_MODEL_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_SHOWROOMRATE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_IMAGE" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TRACTOR_STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TRACTOR_MODEL_OLD_TRACTOR" Member="OLD_TRACTORs" ThisKey="TRACTOR_MODEL_ID" OtherKey="TRACTOR_EXCHANGE_MODELID" Type="OLD_TRACTOR" />
+      <Association Name="TRACTOR_MODEL_TRACTOR_PURCHASE" Member="TRACTOR_PURCHASEs" ThisKey="TRACTOR_MODEL_ID" OtherKey="TRACTOR_MODEL_ID" Type="TRACTOR_PURCHASE" />
+      <Association Name="MASTER_TRACTOR_MODEL" Member="MASTER" ThisKey="TRACTOR_STATUS" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+      <Association Name="SUPPLIER_TRACTOR_MODEL" Member="SUPPLIER" ThisKey="SUPPLIER_ID" OtherKey="SUPPLIER_ID" Type="SUPPLIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRACTOR_PARTS" Member="TRACTOR_PARTs">
+    <Type Name="TRACTOR_PART">
+      <Column Name="TRACTOR_PART_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TRACTOR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PART_MAKER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PART_SIZE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PART_SERIAL_NO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PART_REMARKS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PART_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MASTER_TRACTOR_PART" Member="MASTER" ThisKey="PART_TYPE" OtherKey="MASTER_ID" Type="MASTER" IsForeignKey="true" />
+      <Association Name="TRACTOR_PURCHASE_TRACTOR_PART" Member="TRACTOR_PURCHASE" ThisKey="TRACTOR_ID" OtherKey="TRACTOR_ID" Type="TRACTOR_PURCHASE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRACTOR_PURCHASES" Member="TRACTOR_PURCHASEs">
+    <Type Name="TRACTOR_PURCHASE">
+      <Column Name="TRACTOR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="INVOICE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_MODEL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_ENGINE_NO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_CHASSIS_NO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_SPECIFICATION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TRACTOR_FIP_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRACTOR_ALTERNATE_MAKER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRACTOR_SELFSTARTMAKER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRACTOR_PDI_HOURS" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TRACTOR_SERVICE_BOOK_NO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TRACTOR_PURCHASE_RATE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="TRACTOR_PURCHASE_DELIVERY_CHALAN" Member="DELIVERY_CHALANs" ThisKey="TRACTOR_ID" OtherKey="TRACTOR_ID" Type="DELIVERY_CHALAN" />
+      <Association Name="TRACTOR_PURCHASE_JOB_CARD" Member="JOB_CARDs" ThisKey="TRACTOR_ID" OtherKey="TRACTOR_ID" Type="JOB_CARD" />
+      <Association Name="TRACTOR_PURCHASE_TRACTOR_PART" Member="TRACTOR_PARTs" ThisKey="TRACTOR_ID" OtherKey="TRACTOR_ID" Type="TRACTOR_PART" />
+      <Association Name="INVOICE_TRACTOR_PURCHASE" Member="INVOICE" ThisKey="INVOICE_ID" OtherKey="INVOICE_ID" Type="INVOICE" IsForeignKey="true" />
+      <Association Name="TRACTOR_MODEL_TRACTOR_PURCHASE" Member="TRACTOR_MODEL" ThisKey="TRACTOR_MODEL_ID" OtherKey="TRACTOR_MODEL_ID" Type="TRACTOR_MODEL" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20, 22.75" name="DataTractorShowroomNew">
+  <DataContextMoniker Name="/DataTractorShowroomNewDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a8725c4a-1ba1-40f6-b210-6f238f6c3350" absoluteBounds="12, 10.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/BALANCE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8c7e2c4-66b0-4775-a41d-b89c94770793" absoluteBounds="12.015, 11.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0aa72804-b804-41a3-8546-cb9e4a830f6b" absoluteBounds="3.75, 8.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/VILLAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f486a62-ab7d-4ab5-ac06-f2509ac70668" absoluteBounds="3.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1fa363c2-10e9-42d2-82b5-c5d6789de613" absoluteBounds="6.5, 9.25, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/CUSTOMER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8951fd9-da20-4494-a7e8-38851d2e5e72" absoluteBounds="6.515, 9.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f54e16cb-06d3-48fb-a7ff-510d56ca9fb4" absoluteBounds="12, 13.875, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/DELIVERY_CHALAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c49b8b56-127d-4cf7-af58-d0699a75bc09" absoluteBounds="12.015, 14.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a5f6cf47-a83f-4179-af31-e3bdfadb40a4" absoluteBounds="1.75, 5.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/DISTRICT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e67dfbf-960b-4ec6-8d66-c15c1de842ba" absoluteBounds="1.7650000000000001, 6.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d153399-9d79-4bdd-b4e5-f0d28ae92577" absoluteBounds="3.5, 20.125, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/INVOICE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1627301-5a18-41c4-bfd1-b927fe294c46" absoluteBounds="3.515, 20.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bfaeedf8-6450-4c28-87be-20c7ae7aeebc" absoluteBounds="15, 9.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/JOB_CARD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="303419b9-9dc3-40fd-9942-941d3b7e0292" absoluteBounds="15.015, 10.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8594618b-0943-4d4a-b8a6-eca79c265339" absoluteBounds="17.75, 7.875, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/JOB_COMPLAINT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84dd5a51-23cf-4ad5-8228-33f5f398147b" absoluteBounds="17.765, 8.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11e80308-6003-4db2-935a-38b7f992dac1" absoluteBounds="17.75, 12.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/JOB_TRACTOR_CUSTOMER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a993fda2-788d-44f9-9272-9ea469aa285a" absoluteBounds="17.765, 13.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" absoluteBounds="0.75, 14.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/MASTER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbd39577-04c9-434a-b284-6fbcec242ca5" absoluteBounds="0.765, 15.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff18c87e-2455-42d2-9a52-bc05197a9407" absoluteBounds="9, 13.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/OLD_TRACTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e30dfba-04d0-4aa5-a912-2b2db19d1505" absoluteBounds="9.015, 14.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c2eea9a-3309-49c2-a5e4-5d906c4b17bd" absoluteBounds="9.25, 10.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/SALES_INVOICE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c2f07c1-8827-42d2-8ab6-a8a53b2e1542" absoluteBounds="9.265, 11.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="991112df-10b1-4513-9632-1776f317f491" absoluteBounds="17.75, 10.375, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/SERVICE_CHARGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f46fc55-662a-4c24-9caf-ecc8b04f02b8" absoluteBounds="17.765, 10.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de7eac4a-5c4a-43f3-802a-1d83bec155dc" absoluteBounds="3.5, 11.5, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/SPARE_PART" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b0a2e76-9770-4bdf-9098-8b8d85c306e2" absoluteBounds="3.515, 11.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="213c72af-f61d-4093-b4c9-256cc604ef5d" absoluteBounds="15, 15.375, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/SPARE_PURCHASES_SALE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eaed1a88-34b0-4c60-a371-0015e93a4419" absoluteBounds="15.015, 15.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="daf01cf5-b0fb-45ed-b051-080bb611a7dd" absoluteBounds="6.25, 13.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/SPARE_RATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d65391f4-1699-4111-acfc-fd2afcab7348" absoluteBounds="6.265, 13.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e4430fe0-a2a6-49a5-ac94-8ce70d96592a" absoluteBounds="3.5, 14.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/SUPPLIER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97dd1d21-bb9d-4c64-9df8-66990361c643" absoluteBounds="3.515, 14.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6cdcfff4-f1cd-4ee5-a9e1-dd31d33da506" absoluteBounds="1, 8.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/TALUK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67403ab0-4383-4d1f-ad9e-fc6cd1f7f7d9" absoluteBounds="1.0150000000000001, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e4be2506-efde-46a3-8302-6b3ea0bc6903" absoluteBounds="6.25, 16.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_MODEL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebb7475b-2692-49d2-a1c5-bed22fac0288" absoluteBounds="6.265, 16.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1dd2310-f681-4e5e-ba91-76616614c000" absoluteBounds="11.75, 17.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_PART" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b45f3f75-4e0c-44ea-a219-400274771c26" absoluteBounds="11.765, 18.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="263a67db-2574-4a34-9bbd-243f437f4302" absoluteBounds="9, 17.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_PURCHASE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="654dc4e2-fa7f-4c4a-89d3-f35ab8823ac6" absoluteBounds="9.015, 18.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 9.69314697265625); (6.5 : 9.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/VILLAGE/VILLAGE_CUSTOMER" />
+      <nodes>
+        <classShapeMoniker Id="0aa72804-b804-41a3-8546-cb9e4a830f6b" />
+        <classShapeMoniker Id="1fa363c2-10e9-42d2-82b5-c5d6789de613" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 10.4239005533854); (9 : 10.4239005533854); (9 : 13.0304996744792); (9.04166666666667 : 13.0304996744792 : JumpStart); (9.20833333333333 : 13.0304996744792 : JumpEnd); (10.1354146666667 : 13.0304996744792 : JumpStart); (10.3020813333333 : 13.0304996744792 : JumpEnd); (11.0416641666667 : 13.0304996744792 : JumpStart); (11.2083308333333 : 13.0304996744792 : JumpEnd); (11.4166666666667 : 13.0304996744792 : JumpStart); (11.5833333333333 : 13.0304996744792 : JumpEnd); (13 : 13.0304996744792); (13 : 13.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/CUSTOMER/CUSTOMER_DELIVERY_CHALAN" />
+      <nodes>
+        <classShapeMoniker Id="1fa363c2-10e9-42d2-82b5-c5d6789de613" />
+        <classShapeMoniker Id="f54e16cb-06d3-48fb-a7ff-510d56ca9fb4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16 : 9.75); (16 : 8.76044840494792); (17.75 : 8.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/JOB_CARD/JOB_CARD_JOB_COMPLAINT" />
+      <nodes>
+        <classShapeMoniker Id="bfaeedf8-6450-4c28-87be-20c7ae7aeebc" />
+        <classShapeMoniker Id="8594618b-0943-4d4a-b8a6-eca79c265339" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 13.2556062825521); (17.75 : 13.2556062825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/JOB_CARD/JOB_CARD_JOB_TRACTOR_CUSTOMER" />
+      <nodes>
+        <classShapeMoniker Id="bfaeedf8-6450-4c28-87be-20c7ae7aeebc" />
+        <classShapeMoniker Id="11e80308-6003-4db2-935a-38b7f992dac1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.84375 : 14.75); (0.84375 : 10.8181469726562); (6.5 : 10.8181469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_CUSTOMER" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="1fa363c2-10e9-42d2-82b5-c5d6789de613" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 16.1362939453125); (1.75 : 21.2989005533854); (3.5 : 21.2989005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_INVOICE" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="2d153399-9d79-4bdd-b4e5-f0d28ae92577" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 11.6642976888021); (12 : 11.6642976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SALES_INVOICE/SALES_INVOICE_BALANCE" />
+      <nodes>
+        <classShapeMoniker Id="9c2eea9a-3309-49c2-a5e4-5d906c4b17bd" />
+        <classShapeMoniker Id="a8725c4a-1ba1-40f6-b210-6f238f6c3350" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 12.7804996744792); (11.625 : 13.1554996744792); (11.625 : 15.0489005533854); (12 : 15.0489005533854)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SALES_INVOICE/SALES_INVOICE_DELIVERY_CHALAN" />
+      <nodes>
+        <classShapeMoniker Id="9c2eea9a-3309-49c2-a5e4-5d906c4b17bd" />
+        <classShapeMoniker Id="f54e16cb-06d3-48fb-a7ff-510d56ca9fb4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 12.6170450260417); (15 : 12.6170450260417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SALES_INVOICE/SALES_INVOICE_JOB_CARD" />
+      <nodes>
+        <classShapeMoniker Id="9c2eea9a-3309-49c2-a5e4-5d906c4b17bd" />
+        <classShapeMoniker Id="bfaeedf8-6450-4c28-87be-20c7ae7aeebc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 11.1114005533854); (8.91666666666667 : 11.1114005533854 : JumpStart); (9.08333333333333 : 11.1114005533854 : JumpEnd); (9.25 : 11.1114005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/CUSTOMER/CUSTOMER_SALES_INVOICE" />
+      <nodes>
+        <classShapeMoniker Id="1fa363c2-10e9-42d2-82b5-c5d6789de613" />
+        <classShapeMoniker Id="9c2eea9a-3309-49c2-a5e4-5d906c4b17bd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 15.4431469726563); (3.25 : 15.4431469726563); (3.25 : 14); (6 : 14); (6 : 12.625); (8.75 : 12.625); (8.75 : 13.2804996744792); (10.218748 : 13.2804996744792); (10.218748 : 12.7804996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_SALES_INVOICE" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="9c2eea9a-3309-49c2-a5e4-5d906c4b17bd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 11.2604484049479); (17.75 : 11.2604484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/JOB_CARD/JOB_CARD_SERVICE_CHARGE" />
+      <nodes>
+        <classShapeMoniker Id="bfaeedf8-6450-4c28-87be-20c7ae7aeebc" />
+        <classShapeMoniker Id="991112df-10b1-4513-9632-1776f317f491" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.8281275 : 14.75); (1.8281275 : 12.4815991210937); (3.5 : 12.4815991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_SPARE_PART" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="de7eac4a-5c4a-43f3-802a-1d83bec155dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.281252 : 16.1362939453125); (2.281252 : 16.5489005533854); (2.91666666666667 : 16.5489005533854 : JumpStart); (3.08333333333333 : 16.5489005533854 : JumpEnd); (4.41666666666667 : 16.5489005533854 : JumpStart); (4.58333333333333 : 16.5489005533854 : JumpEnd); (4.94791916666667 : 16.5489005533854 : JumpStart); (5.11458583333333 : 16.5489005533854 : JumpEnd); (5.66666666666667 : 16.5489005533854 : JumpStart); (5.83333333333333 : 16.5489005533854 : JumpEnd); (6 : 16.5489005533854); (6 : 16); (8.41666666666667 : 16 : JumpStart); (8.58333333333333 : 16 : JumpEnd); (8.75 : 16); (8.75 : 16.9247054036458); (11.0416641666667 : 16.9247054036458 : JumpStart); (11.2083308333333 : 16.9247054036458 : JumpEnd); (13.8229166666667 : 16.9247054036458 : JumpStart); (13.9895833333333 : 16.9247054036458 : JumpEnd); (14.2916666666667 : 16.9247054036458 : JumpStart); (14.4583333333333 : 16.9247054036458 : JumpEnd); (14.625 : 16.9247054036458); (14.625 : 16.5489005533854); (14.7916666666667 : 16.5489005533854 : JumpStart); (14.9583333333333 : 16.5489005533854 : JumpEnd); (15 : 16.5489005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_SPARE_PURCHASES_SALE" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="213c72af-f61d-4093-b4c9-256cc604ef5d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 12.1426505533854); (8.91666666666667 : 12.1426505533854 : JumpStart); (9.08333333333333 : 12.1426505533854 : JumpEnd); (9.125 : 12.1426505533854); (9.125 : 13.1554996744792); (10.1354146666667 : 13.1554996744792 : JumpStart); (10.3020813333333 : 13.1554996744792 : JumpEnd); (11.0416641666667 : 13.1554996744792 : JumpStart); (11.2083308333333 : 13.1554996744792 : JumpEnd); (12.9166666666667 : 13.1554996744792 : JumpStart); (13.0833333333333 : 13.1554996744792 : JumpEnd); (14.75 : 13.1554996744792); (14.75 : 13.8862125651042); (14.7916666666667 : 13.8862125651042 : JumpStart); (14.9583333333333 : 13.8862125651042 : JumpEnd); (16 : 13.8862125651042); (16 : 15.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SPARE_PART/SPARE_PART_SPARE_PURCHASES_SALE" />
+      <nodes>
+        <classShapeMoniker Id="de7eac4a-5c4a-43f3-802a-1d83bec155dc" />
+        <classShapeMoniker Id="213c72af-f61d-4093-b4c9-256cc604ef5d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 21.7011539713542); (16 : 21.7011539713542); (16 : 17.7228011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/INVOICE/INVOICE_SPARE_PURCHASES_SALE" />
+      <nodes>
+        <classShapeMoniker Id="2d153399-9d79-4bdd-b4e5-f0d28ae92577" />
+        <classShapeMoniker Id="213c72af-f61d-4093-b4c9-256cc604ef5d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.1249975 : 12.7804996744792); (11.1249975 : 17.3237532552083); (13.8229166666667 : 17.3237532552083 : JumpStart); (13.9895833333333 : 17.3237532552083 : JumpEnd); (14.7916666666667 : 17.3237532552083 : JumpStart); (14.9583333333333 : 17.3237532552083 : JumpEnd); (15 : 17.3237532552083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SALES_INVOICE/SALES_INVOICE_SPARE_PURCHASES_SALE" />
+      <nodes>
+        <classShapeMoniker Id="9c2eea9a-3309-49c2-a5e4-5d906c4b17bd" />
+        <classShapeMoniker Id="213c72af-f61d-4093-b4c9-256cc604ef5d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 12.8749995); (5.91666666666667 : 12.8749995 : JumpStart); (6.08333333333333 : 12.8749995 : JumpEnd); (6.34375 : 12.8749995); (6.34375 : 13.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SPARE_PART/SPARE_PART_SPARE_RATE" />
+      <nodes>
+        <classShapeMoniker Id="de7eac4a-5c4a-43f3-802a-1d83bec155dc" />
+        <classShapeMoniker Id="daf01cf5-b0fb-45ed-b051-080bb611a7dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 16.2131982421875); (4.5 : 16.7989005533854); (4.94791916666667 : 16.7989005533854 : JumpStart); (5.11458583333333 : 16.7989005533854 : JumpEnd); (5.75 : 16.7989005533854); (5.75 : 15.75); (8.5 : 15.75); (8.5 : 17.0497054036458); (11.0416641666667 : 17.0497054036458 : JumpStart); (11.2083308333333 : 17.0497054036458 : JumpEnd); (13.8229166666667 : 17.0497054036458 : JumpStart); (13.9895833333333 : 17.0497054036458 : JumpEnd); (14.375 : 17.0497054036458); (14.375 : 15.9306982766927); (14.7916666666667 : 15.9306982766927 : JumpStart); (14.9583333333333 : 15.9306982766927 : JumpEnd); (15 : 15.9306982766927)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SUPPLIER/SUPPLIER_SPARE_PURCHASES_SALE" />
+      <nodes>
+        <classShapeMoniker Id="e4430fe0-a2a6-49a5-ac94-8ce70d96592a" />
+        <classShapeMoniker Id="213c72af-f61d-4093-b4c9-256cc604ef5d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.4767976888021); (6.25 : 14.4767976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SUPPLIER/SUPPLIER_SPARE_RATE" />
+      <nodes>
+        <classShapeMoniker Id="e4430fe0-a2a6-49a5-ac94-8ce70d96592a" />
+        <classShapeMoniker Id="daf01cf5-b0fb-45ed-b051-080bb611a7dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 15.0340734863281); (3.16666666666667 : 15.0340734863281 : JumpStart); (3.33333333333333 : 15.0340734863281 : JumpEnd); (3.5 : 15.0340734863281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_SUPPLIER" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="e4430fe0-a2a6-49a5-ac94-8ce70d96592a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 15.8522204589844); (2.91666666666667 : 15.8522204589844 : JumpStart); (3.08333333333333 : 15.8522204589844 : JumpEnd); (3.5 : 15.8522204589844)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_SUPPLIER1" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="e4430fe0-a2a6-49a5-ac94-8ce70d96592a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 9.44314697265625); (3.75 : 9.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/TALUK/TALUK_VILLAGE" />
+      <nodes>
+        <classShapeMoniker Id="6cdcfff4-f1cd-4ee5-a9e1-dd31d33da506" />
+        <classShapeMoniker Id="0aa72804-b804-41a3-8546-cb9e4a830f6b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.375 : 7.06899251302083); (2.375 : 8.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/DISTRICT/DISTRICT_TALUK" />
+      <nodes>
+        <classShapeMoniker Id="a5f6cf47-a83f-4179-af31-e3bdfadb40a4" />
+        <classShapeMoniker Id="6cdcfff4-f1cd-4ee5-a9e1-dd31d33da506" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 16.4623527018229); (8.41666666666667 : 16.4623527018229 : JumpStart); (8.58333333333333 : 16.4623527018229 : JumpEnd); (8.66666666666667 : 16.4623527018229 : JumpStart); (8.83333333333333 : 16.4623527018229 : JumpEnd); (9 : 16.4623527018229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_MODEL/TRACTOR_MODEL_OLD_TRACTOR" />
+      <nodes>
+        <classShapeMoniker Id="e4be2506-efde-46a3-8302-6b3ea0bc6903" />
+        <classShapeMoniker Id="ff18c87e-2455-42d2-9a52-bc05197a9407" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187475 : 16.1362939453125); (1.2187475 : 17.5060493977865); (1.66666666666667 : 17.5060493977865 : JumpStart); (1.83333333333333 : 17.5060493977865 : JumpEnd); (2.91666666666667 : 17.5060493977865 : JumpStart); (3.08333333333333 : 17.5060493977865 : JumpEnd); (6.25 : 17.5060493977865)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_TRACTOR_MODEL" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="e4be2506-efde-46a3-8302-6b3ea0bc6903" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 16.2131982421875); (5.0312525 : 17.1212224755859); (6.25 : 17.1212224755859)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/SUPPLIER/SUPPLIER_TRACTOR_MODEL" />
+      <nodes>
+        <classShapeMoniker Id="e4430fe0-a2a6-49a5-ac94-8ce70d96592a" />
+        <classShapeMoniker Id="e4be2506-efde-46a3-8302-6b3ea0bc6903" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 15.6476837158203); (3 : 15.6476837158203); (3 : 18.4631982421875); (8.75 : 18.4631982421875); (8.75 : 17.5); (11.2282041282051 : 17.5 : JumpStart); (11.3948707948718 : 17.5 : JumpEnd); (12.75 : 17.5); (12.75 : 17.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/MASTER/MASTER_TRACTOR_PART" />
+      <nodes>
+        <classShapeMoniker Id="087fe4ab-b3d6-42e9-a34f-ec542132bb2e" />
+        <classShapeMoniker Id="d1dd2310-f681-4e5e-ba91-76616614c000" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 20.4175032552083); (13.90625 : 20.4175032552083); (13.90625 : 16.2228011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_PURCHASE/TRACTOR_PURCHASE_DELIVERY_CHALAN" />
+      <nodes>
+        <classShapeMoniker Id="263a67db-2574-4a34-9bbd-243f437f4302" />
+        <classShapeMoniker Id="f54e16cb-06d3-48fb-a7ff-510d56ca9fb4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 17.8115374615385); (11.3740374615385 : 17.4375); (13.8229166666667 : 17.4375 : JumpStart); (13.9895833333333 : 17.4375 : JumpEnd); (14.875 : 17.4375); (14.875 : 13.7612125651042); (15 : 13.6362125651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_PURCHASE/TRACTOR_PURCHASE_JOB_CARD" />
+      <nodes>
+        <classShapeMoniker Id="263a67db-2574-4a34-9bbd-243f437f4302" />
+        <classShapeMoniker Id="bfaeedf8-6450-4c28-87be-20c7ae7aeebc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 18.8897710680088); (11.75 : 18.8897710680088)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_PURCHASE/TRACTOR_PURCHASE_TRACTOR_PART" />
+      <nodes>
+        <classShapeMoniker Id="263a67db-2574-4a34-9bbd-243f437f4302" />
+        <classShapeMoniker Id="d1dd2310-f681-4e5e-ba91-76616614c000" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 20.4960034179688); (9 : 20.4960034179688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/INVOICE/INVOICE_TRACTOR_PURCHASE" />
+      <nodes>
+        <classShapeMoniker Id="2d153399-9d79-4bdd-b4e5-f0d28ae92577" />
+        <classShapeMoniker Id="263a67db-2574-4a34-9bbd-243f437f4302" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 17.9815991210938); (8.66666666666667 : 17.9815991210938 : JumpStart); (8.83333333333333 : 17.9815991210938 : JumpEnd); (9 : 17.9815991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataTractorShowroomNewDataContext/TRACTOR_MODEL/TRACTOR_MODEL_TRACTOR_PURCHASE" />
+      <nodes>
+        <classShapeMoniker Id="e4be2506-efde-46a3-8302-6b3ea0bc6903" />
+        <classShapeMoniker Id="263a67db-2574-4a34-9bbd-243f437f4302" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
