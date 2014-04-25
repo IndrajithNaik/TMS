@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="TSUILayer.Views.PopUps.WPFMessageBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  MinWidth="150"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <!--<RowDefinition Height="2" />-->
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--<Image Source="{Binding MessageImageSource}" HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Height="48" Width="48" Margin="10 20 0 0" />-->
+        <TextBlock Text="{Binding Message}" Grid.RowSpan="2" Grid.Column="1" TextWrapping="Wrap" TextAlignment="Left" 
+            HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 10 10" />
+        <Expander Header="Show Details" Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ShowDetails}">
+            <TextBlock Margin="15 4 10 4" Text="{Binding InnerMessageDetails}" TextWrapping="Wrap" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left"/>
+        </Expander>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" 
+                    HorizontalAlignment="Right" Margin="0 0 5 0">
+            <!--<Button Content="_Yes" Visibility="{Binding YesNoVisibility}" Command="{Binding YesCommand}" Margin="5 5 5 5" Height="24" Width="80" FontFamily="Arial" FontSize="12"  Foreground="White">-->
+            <Button  Height="28" Visibility="{Binding YesNoVisibility}" Command="{Binding YesCommand}" Margin="5 5 5 5"  Foreground="White" FontFamily="Arial"  FontSize="12" Width="80"  Background="Transparent"  BorderBrush="Transparent"  BorderThickness="0" Padding="-4" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+               
+                <!--<Image  Source="/Shell;component/Images/yes.png"/>-->
+                <!--<Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>-->
+            </Button>
+            <!--<Button Content="_No" Visibility="{Binding YesNoVisibility}" Command="{Binding NoCommand}" Margin="5 5 5 5" Height="24" Width="80" FontFamily="Arial" FontSize="12"  Foreground="White">-->
+            <Button  Height="28" Margin="5 5 5 5"  Visibility="{Binding YesNoVisibility}" Command="{Binding NoCommand}" Foreground="White" FontFamily="Arial"  FontSize="12"  Width="80" Background="Transparent"  BorderBrush="Transparent"  BorderThickness="0" Padding="-4" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+             
+                <!--<Image  Source="/Shell;component/Images/no.png"/>-->
+                <!--<Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>-->
+            </Button>
+            <!--<Button Content="_Cancel" Visibility="{Binding CancelVisibility}" Command="{Binding CancelCommand}" Margin="5 5 5 5" Height="24" Width="80" FontFamily="Arial" FontSize="12"  Foreground="White">-->
+            <Button  Height="27" Margin="5 5 5 5" Visibility="{Binding CancelVisibility}" Command="{Binding CancelCommand}"  Foreground="White" FontFamily="Arial"  FontSize="12" Width="75"  Background="Transparent"  BorderBrush="Transparent"  BorderThickness="0" Padding="-4" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                  
+                <!--<Image  Source="/Shell;component/Images/cancel.png"/-->>
+                <!--<Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>-->
+            </Button>
+            <!--<Button Content="O_K" Visibility="{Binding OkVisibility}" Command="{Binding OkCommand}" Margin="5 5 5 5" Height="24" Width="80" FontFamily="Arial" FontSize="12"  Foreground="White">-->
+            <Button  Height="27" Visibility="{Binding OkVisibility}" Command="{Binding OkCommand}" Margin="5 5 5 5"   Foreground="White" FontFamily="Arial"  FontSize="12"  Width="75"  Background="Transparent"  BorderBrush="Transparent"  BorderThickness="0" Padding="-4" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+              
+                <!--<Image  Source="/Shell;component/Images/ok_btn.png"/>-->
+                <!--<Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>-->
+            </Button>
+            <Button Content="_Close" Visibility="{Binding CloseVisibility}" Command="{Binding CloseCommand}" Margin="5 5 5 5" Height="24" Width="80" FontFamily="Arial" FontSize="12"  Foreground="White">
+                <Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

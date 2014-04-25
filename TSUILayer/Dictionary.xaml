@@ -1,0 +1,779 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"        
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Grid" x:Key="GridStyle">        
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+    <Style TargetType="Button" x:Key="ButtonStyle">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Margin" Value="0,0,4,4"/>
+    </Style>
+    <Style TargetType="Label" x:Key="LabelStyleBlue">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Margin" Value="0,2,0,2"/>
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
+    <Style TargetType="Label" x:Key="LabelStyle">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Margin" Value="530,2,0,2"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style TargetType="Label" x:Key="LabelStyleBold">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Margin" Value="0,2,0,2"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <!--Final Style for Menu -->
+    <Style TargetType="Menu" x:Key="MyMenuBoxStyle">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="9pt" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Margin" Value="0,3,0,3" />
+        <Setter Property="Height" Value="35" />
+       
+        <!--<Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/TSUILayer;component/Images/main-menu_1.png" Stretch="Fill" TileMode="None" />
+            </Setter.Value>
+        </Setter>-->
+       
+
+    </Style>
+    <!--<Style TargetType="MenuItem" x:Key="MyMenuBoxStylenew">
+       
+        <Setter Property="Height" Value="29"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="Background" >
+            <Setter.Value>
+                <ImageBrush ImageSource="/TSUILayer;component/Images/whilte_gb.PNG" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0,0,0,.25" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Foreground" Value="#0F3761" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="GhostWhite" />
+        <Setter Property="Cursor" Value="Hand"></Setter>
+
+
+    </Style>-->
+    <!--new-->
+    <Style x:Key="MyMenuItemBoxStylenew" TargetType="{x:Type MenuItem}">
+        <Setter Property="Height" Value="29"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Border x:Name="Border"  BorderBrush="Black" SnapsToDevicePixels="True" VerticalAlignment="Stretch">
+                       
+                            <!--<Border.Background>
+                            <ImageBrush ImageSource="/TSUILayer;component/Images/Gray_Select1_bg.PNG"/>
+                            </Border.Background>-->
+                      
+                        <Grid >
+                            
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
+                                          x:Name="HeaderHost"
+                                          RecognizesAccessKey="True"
+                                          ContentSource="Header"
+                                          />
+                            <Popup HorizontalAlignment="Left" Grid.RowSpan="3" IsOpen="{Binding Path=IsSubmenuOpen}" Placement="Bottom" x:Name="SubMenuPopup">
+                                <Border x:Name="SubMenuBorder" BorderBrush="Gray">
+                                    <Grid x:Name="SubMenu" Grid.IsSharedSizeScope="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" Orientation="Vertical" Background="White"/>
+                                    </Grid>
+                                </Border>
+                            </Popup>
+                            <Border HorizontalAlignment="Right" Width="3" Height="35" Grid.Column="1">
+                                <!--<Border.Background>
+                                    <ImageBrush ImageSource="/TSUILayer;component/Images/main-menu_divider.png"/>
+                                </Border.Background>-->
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="IsOpen" Value="true" TargetName="SubMenuPopup"/>
+                            <!--<Setter Property="Background" TargetName="Border">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/TSUILayer;component/Images/whilte_gb.PNG" />
+                                </Setter.Value>
+                            </Setter>-->
+                            <Setter Property="BorderThickness" Value="0,0,0,.25" TargetName="Border"/>
+                            <Setter Property="BorderBrush" Value="Black" TargetName="Border"/>
+                            <Setter Property="Foreground" Value="#0F3761" />
+                            <Setter Property="BorderThickness" Value="2" TargetName="SubMenuBorder"/>
+                            <Setter Property="BorderBrush" Value="GhostWhite" TargetName="SubMenuBorder"/>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                        </Trigger>
+                        <!--<Trigger Property="IsSubmenuOpen" Value="true">
+
+                            <Setter Property="Background" TargetName="Border">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/TSUILayer;component/Images/whilte_gb.PNG" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="BorderThickness" Value="0,0,0,.25" TargetName="Border"/>
+                            <Setter Property="BorderBrush" Value="Black" TargetName="Border"/>
+                            <Setter Property="Foreground" Value="#0F3761" />
+                            <Setter Property="BorderThickness" Value="2" TargetName="SubMenuBorder"/>
+                            <Setter Property="BorderBrush" Value="GhostWhite" TargetName="SubMenuBorder"/>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--old-->
+    <!--Final Style for MenuItems VerticalContentAlignment="Center" HorizontalContentAlignment="Center"-->
+    <Style x:Key="MyMenuItemBoxStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Height" Value="29"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <!--<Setter Property="StaysOpenOnClick" Value="True" />-->
+        <!--<Setter Property="BorderThickness" Value="1,1,1,2"/>-->
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Menu}}}"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Border x:Name="Border"  BorderBrush="Black" SnapsToDevicePixels="True" VerticalAlignment="Stretch" Height="29" MinWidth="60">
+                        <Grid >
+                            <!-- Content for the menu text etc -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
+                                          x:Name="HeaderHost"
+                                          RecognizesAccessKey="True"
+                                          ContentSource="Header"
+                                           ClipToBounds="True"/>
+                             <Popup HorizontalAlignment="Left" Grid.RowSpan="3" IsOpen="{Binding Path=IsSubmenuOpen}" Placement="Bottom" x:Name="SubMenuPopup">
+                                <Border x:Name="SubMenuBorder" BorderBrush="Gray">
+                                    <Grid x:Name="SubMenu" Grid.IsSharedSizeScope="True">
+                                        <DockPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" Background="White"/>
+                                    </Grid>
+                                </Border>
+                            </Popup>
+                            <Border HorizontalAlignment="Right" Width="3" Height="35" Grid.Column="1">
+                                <!--<Border.Background>
+                                    <ImageBrush ImageSource="/TSUILayer;component/Images/main-menu_divider.png"/>
+                                </Border.Background>-->
+                            </Border>
+                            
+                        </Grid>
+                    </Border>
+                    <!-- These triggers re-configure the four arrangements of MenuItem to show different levels of menu via Role -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="IsOpen" Value="true" TargetName="SubMenuPopup"/>
+                            <!--<Setter Property="Background" TargetName="Border">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/TSUILayer;component/Images/whilte_gb.PNG" />
+                                </Setter.Value>
+                            </Setter>-->
+                            <Setter Property="BorderThickness" Value="0,0,0,.25" TargetName="Border"/>
+                            <Setter Property="BorderBrush" Value="Black" TargetName="Border"/>
+                            <Setter Property="Foreground" Value="#0F3761" />
+                            <Setter Property="BorderThickness" Value="2" TargetName="SubMenuBorder"/>
+                            <Setter Property="BorderBrush" Value="GhostWhite" TargetName="SubMenuBorder"/>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                            <!--<Setter Property="StaysOpenOnClick" Value="true"/>-->
+                        </Trigger>
+                        <Trigger Property="IsSubmenuOpen" Value="true"> 
+                            
+                            <!--<Setter Property="Background" TargetName="Border">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/TSUILayer;component/Images/whilte_gb.PNG" />
+                                </Setter.Value>
+                            </Setter>-->
+                            <Setter Property="BorderThickness" Value="0,0,0,.25" TargetName="Border"/>
+                            <Setter Property="BorderBrush" Value="Black" TargetName="Border"/>
+                            <Setter Property="Foreground" Value="#0F3761" />
+                            <Setter Property="BorderThickness" Value="2" TargetName="SubMenuBorder"/>
+                            <Setter Property="BorderBrush" Value="GhostWhite" TargetName="SubMenuBorder"/>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                    
+                        </Trigger>
+                      <!--  <Trigger Property="StaysOpenOnClick" Value="true">
+                            <Setter Property="IsOpen" Value="true" TargetName="SubMenuPopup"/>
+                            <Setter Property="Background" TargetName="Border">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/TSUILayer;component/Images/whilte_gb.PNG" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="BorderThickness" Value="0,0,0,.25" TargetName="Border"/>
+                           <Setter Property="BorderBrush" Value="Black" TargetName="Border"/>
+                            <Setter Property="Foreground" Value="#0F3761" />
+                            <Setter Property="BorderThickness" Value="2" TargetName="SubMenuBorder"/>
+                            <Setter Property="BorderBrush" Value="GhostWhite" TargetName="SubMenuBorder"/>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--Final Style for SubMenuItems -->
+    <Style x:Key="MySubMenuItemStyle" TargetType="{x:Type MenuItem}">
+        <!--<Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type MenuItem}}}"/>-->
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Foreground" Value="#0066CC"/>
+        <Setter Property="FontSize" Value="8pt" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Border x:Name="Border">
+                        <Grid x:Name="grid" HorizontalAlignment="Left" >
+                                <ContentPresenter Grid.Column="3" 
+                                          Margin="4"
+                                          x:Name="HeaderHost1"
+                                          RecognizesAccessKey="True"
+                                          ContentSource="Header"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Background" Value="#336699" TargetName="Border"/>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Style for Selected GDS -->
+    <Style x:Key="SubMenuItemStyleForSelectedGDS" TargetType="{x:Type MenuItem}">
+        <!--<Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type MenuItem}}}"/>-->
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="8pt" />
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Border x:Name="Border">
+                        <Grid x:Name="grid" HorizontalAlignment="Left" >
+                            <ContentPresenter Grid.Column="3" 
+                                          Margin="4"
+                                          x:Name="HeaderHost1"
+                                          RecognizesAccessKey="True"
+                                          ContentSource="Header"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Background" Value="#336699" TargetName="Border"/>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--Style for Toolbaroverflow panel-->
+    <Style TargetType="ToolBarOverflowPanel" x:Key="MyToolBarStyle">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="Cyan" Offset="0.0"/>
+                    <GradientStop Color="Yellow" Offset="0.5"/>
+                    <GradientStop Color="Red" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect" >
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="40" 
+                             Color="Maroon" Direction="50" Opacity="0.5"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="TabHeaderButtonStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <!--<Image Source="../Images/Btn_xSign_Normal.gif" Stretch="None" />-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="Button" x:Key="InActiveTSUILayer">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="Gray" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="Gray" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsFocused" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Gray" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Button" x:Key="SelectedTab">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="Orange" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,5" StartPoint="0,1">
+                    <GradientStop Color="Orange" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,5" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsFocused" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Orange" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ActiveTSUILayer">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="LightBlue" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="LightBlue" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsFocused" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="false">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="true">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+        </Style.Triggers>
+    </Style>
+
+
+</ResourceDictionary>

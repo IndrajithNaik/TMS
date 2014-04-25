@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="TSUILayer.Views.AddTractorPurchaseDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="773" d:DesignWidth="1409"  Loaded="UserControl_Loaded">
+    <Grid Height="839" Width="1397" Name="gridTractorPurchase">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="476*">
+
+            </RowDefinition>
+            <RowDefinition Height="124*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="507*">
+            </ColumnDefinition>
+            <ColumnDefinition Width="155*"></ColumnDefinition>
+            <ColumnDefinition Width="82*" />
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="74*" />
+            <ColumnDefinition Width="502*" />
+        </Grid.ColumnDefinitions>
+        
+        <DataGrid Background="Gray"  Name="gridTractors" Margin="10,276,453,248" AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="6" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding TRACTOR_MODEL.SUPPLIER.SUPPLIER_NAME}" Width="150*" Header="Supplier Name"/>
+                <DataGridTextColumn Binding="{Binding TRACTOR_MODEL.TRACTOR_MODEL_NAME}" Width="80*" Header="Model"/>
+                <DataGridTextColumn Binding="{Binding TRACTOR_SPECIFICATION}" Width="200*" Header="Tractor Specification"/>
+                <DataGridTextColumn Binding="{Binding TRACTOR_ENGINE_NO}" Width="100*" Header="Engine No"/>
+                <DataGridTextColumn Binding="{Binding TRACTOR_CHASSIS_NO}" Width="100*" Header="Chassis No"/>
+                <DataGridTextColumn Binding="{Binding TRACTOR_PURCHASE_RATE}" Width="100*" Header="Unit Cost"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Invoice Number" FontWeight="Bold" Height="26" HorizontalAlignment="Left" Margin="59,75,0,0" Name="label1" VerticalAlignment="Top" Grid.Column="5" />
+        <Label Content="Invoice Date" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="58,109,0,0" Name="label4" VerticalAlignment="Top" Width="90" Grid.Column="5" />
+        <Label Content="Tractor Model"  FontWeight="Bold"  Height="28" HorizontalAlignment="Left" Margin="56,177,0,0" Name="label3" VerticalAlignment="Top" Grid.Column="5" Width="89" />
+        <Label Content="Select Supplier"  FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="57,143,0,0" Name="label9" VerticalAlignment="Top" Width="104" Grid.Column="5" />
+        <Label Content="Unit Cost"  FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="59,316,0,0" Name="label12" VerticalAlignment="Top" Grid.Column="5" />
+        <Label Content="Add Tractor Purchase Details."  FontWeight="Bold" FontFamily="Calibri" FontSize="24" Grid.ColumnSpan="2" Height="37" HorizontalAlignment="Left" Margin="-15,-48,0,0" Name="label18" VerticalAlignment="Top" Width="466" />
+        <Label Content="Engine Number" Height="28" FontWeight="Bold"  HorizontalAlignment="Left" Margin="55,248,0,0" Name="label14" VerticalAlignment="Top" Grid.Column="5" />
+        <Label Content="Chassis Number" Height="28" FontWeight="Bold"  HorizontalAlignment="Left" Margin="54,279,0,0" Name="label17" VerticalAlignment="Top" Grid.Column="5" />
+        <Label Content="Grand Total"  FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="424,576,0,0" Name="lblSubTotal" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2" />
+        <Label Content="Vat in Percent" FontWeight="Bold"  Height="28" HorizontalAlignment="Left" Margin="424,470,0,0" Name="label11" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+
+        <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="27,601,0,0" Name="btnAddTractor" VerticalAlignment="Top" Width="75" Click="btnAddTractor_Click" Grid.Column="3" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Update" Height="23" HorizontalAlignment="Left" Margin="57,601,0,0" Name="button3" VerticalAlignment="Top" Width="75" Grid.Column="5">
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="31,601,0,0" Name="btnSaveTractor" VerticalAlignment="Top" Width="81" Click="btnSaveTractor_Click" Grid.Column="4" IsEnabled="False" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="12,111,0,0" Name="txtInvoiceForSearch" PreviewTextInput="AlphaNumerictOnly" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+        <TextBox Grid.Column="5" Height="26" HorizontalAlignment="Left" Margin="239,75,0,0" Name="txtInvoiceNumber" PreviewTextInput="AlphaNumerictOnly" VerticalAlignment="Top" Width="120" />
+        <DatePicker Height="26" HorizontalAlignment="Left" Margin="239,109,0,0" Name="dateOfInvoice" VerticalAlignment="Top" Width="115" Grid.Column="5" />
+        <ComboBox Height="26" HorizontalAlignment="Left" Margin="239,146,0,0" Name="cmbSupplier" IsEditable="True" VerticalAlignment="Top" Width="120" Grid.Column="5" SelectedValuePath="Id" DisplayMemberPath="Name" SelectionChanged="cmbSupplier_SelectionChanged" />
+        <ComboBox Height="26" HorizontalAlignment="Left" Margin="239,179,0,0" Name="cmbTractorModel" IsEditable="True" VerticalAlignment="Top" Width="120" Grid.Column="5" SelectedValuePath="Id" DisplayMemberPath="Name" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="239,216,0,0" Name="txtTractorSpecification" VerticalAlignment="Top" Width="120" Grid.Column="5" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="239,248,0,0" Name="txtEngineNo" PreviewTextInput="AlphaNumerictOnly" VerticalAlignment="Top" Width="120" Grid.Column="5" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="239,279,0,0" Name="txtChassisNo" PreviewTextInput="AlphaNumerictOnly" VerticalAlignment="Top" Width="120" Grid.Column="5" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="239,316,0,0" Name="txtUnitCost" PreviewTextInput="FloatingPointOnly" VerticalAlignment="Top" Width="120" Grid.Column="5" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="111,474,0,0" Name="txtVatInPercent" PreviewTextInput="FloatingPointOnly" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.ColumnSpan="2" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="109,510,0,0" Name="txtInsuranceAndOthers" PreviewTextInput="FloatingPointOnly" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.ColumnSpan="2" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="109,544,0,0" Name="txtTradeDiscount" PreviewTextInput="FloatingPointOnly" VerticalAlignment="Top" Width="120" KeyUp ="txtTradeDiscount_KeyUp" Grid.Column="1" Grid.ColumnSpan="2" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="109,578,0,0" Name="txtGrandTotal" PreviewTextInput="FloatingPointOnly" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.ColumnSpan="2" />
+        <Label Content="Tractor Specification"  FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="55,214,0,0" Name="label2" VerticalAlignment="Top" Width="133" Grid.Column="5" />
+        <Label Content="Insurance and Others" FontWeight="Bold"  Height="28" HorizontalAlignment="Left" Margin="424,508,0,0" Name="label6" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+        <Label Content="Trade Discount" FontWeight="Bold"  Height="28" HorizontalAlignment="Left" Margin="424,542,0,0" Name="label7" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2" />
+        <Label Content="Search on Invoice" FontWeight="Bold"  Height="28" HorizontalAlignment="Left" Margin="381,107,0,0" Name="label8" VerticalAlignment="Top" Width="124" Grid.ColumnSpan="2" />
+
+        <Button Content="Search" Height="23" HorizontalAlignment="Left" Margin="4,114,0,0" Name="btnSearchInvoice" VerticalAlignment="Top" Width="88" Click="btnSearchInvoice_Click" Grid.ColumnSpan="2" Grid.Column="2">
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        
+        <DataGrid AutoGenerateColumns="False" Background="Gray" Margin="68,75,133,410" Name="dataGridInvoices" VerticalScrollBarVisibility="Auto" IsReadOnly="True" SelectedCellsChanged="dataGridInvoices_SelectedCellsChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding InvoiceNumber}" Header="Invoice" Width="75" />
+                <DataGridTextColumn Binding="{Binding InvoiceDate}" Header="Date" Width="100" />
+                <DataGridTextColumn Binding="{Binding GrandTotal}" Header="Total Amount" Width="100*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Close" Height="23" HorizontalAlignment="Left" Margin="267,601,0,0" Name="btnClose" VerticalAlignment="Top" Width="94" Grid.Column="5" Click="btnClose_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#81BED9E8" Direction="270" ShadowDepth="4" />
+            </Button.Effect>
+        </Button>
+        <Button Content="View Invoice" Height="23" HorizontalAlignment="Left" Margin="154,601,0,0" Name="btnViewInvoice" VerticalAlignment="Top" Width="94" Grid.Column="5" Click="btnViewInvoice_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#81BED9E8" Direction="270" ShadowDepth="4" />
+            </Button.Effect>
+        </Button>
+
+        <Label FontWeight="Bold" Content="Add Tractor Purchase Details." FontFamily="Calibri" FontSize="24"  Height="37" HorizontalAlignment="Left" Name="label" VerticalAlignment="Top" Width="302" Grid.ColumnSpan="2" Margin="329,3,0,0" />
+        <Label Name="label5" Content="Total :" Grid.Column="2" HorizontalAlignment="Left" Margin="73,435,0,0" VerticalAlignment="Top" Width="65" FontWeight="Bold" Foreground="Red" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label Name="lblTotal" Grid.Column="3" HorizontalAlignment="Left" Margin="58,436,0,0" VerticalAlignment="Top" Width="161" Visibility="Visible" Grid.ColumnSpan="3"  FontWeight="Bold"/>
+    </Grid>
+</UserControl>

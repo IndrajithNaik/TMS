@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DSTMS</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@CUSTOMER_ID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Int32</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>SpGetCustomerHistoryDetail</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="CUSTOMER_ID">
+        <DataField>CUSTOMER_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CUSTOMER_NAME">
+        <DataField>CUSTOMER_NAME</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PRIMARY_CONTACT">
+        <DataField>PRIMARY CONTACT</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="SECONDARY_CONTACT">
+        <DataField>SECONDARY CONTACT</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="ADDRESS">
+        <DataField>ADDRESS</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EMAIL">
+        <DataField>EMAIL</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="VILLAGE">
+        <DataField>VILLAGE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SERVICE_COUPON">
+        <DataField>SERVICE_COUPON</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SERVICE_DATE">
+        <DataField>SERVICE_DATE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SERVICE_AMOUNT">
+        <DataField>SERVICE_AMOUNT</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

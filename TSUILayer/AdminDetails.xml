@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Credentials>
+  <userCredentials>
+    <UserName>Admin</UserName>
+    <Password>MTIzNDU=</Password>
+    <Type>Admin</Type>
+  </userCredentials>
+  <userCredentials>
+    <UserName>Manager</UserName>
+    <Password>MTIzNDU=</Password>
+    <Type>Manager</Type>
+  </userCredentials>
+</Credentials>

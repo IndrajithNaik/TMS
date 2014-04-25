@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="TSUILayer.Views.Reports.CustomerTractorHistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid Height="600" Width="600">
+        <DataGrid AutoGenerateColumns="False" Background="Gray" Margin="10,321,12,12" Name="gridSparesAdded" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding SpareId}" Header="Job Id" Width="75" />
+                <DataGridTextColumn Binding="{Binding SparePartCode}" Header="Date Of Service" Width="100" />
+                <DataGridTextColumn Binding="{Binding SparePartDescription}" Header="Part Description" Width="100" />
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" Width="120" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Print" Height="23" HorizontalAlignment="Left" Margin="492,283,0,0" Name="btnPrintStockScarcityreport" VerticalAlignment="Top" Width="75" />
+        <Button Content="Export To XL Sheet" Height="23" HorizontalAlignment="Left" Margin="348,283,0,0" Name="btnExportToXLSheet" VerticalAlignment="Top" Width="115" />
+        <Button Content="View Customers" Height="23" HorizontalAlignment="Left" Margin="285,88,0,0" Name="btnPurchaseReport" VerticalAlignment="Top" Width="141" />
+        <Label Content="Customer Name" Height="28" HorizontalAlignment="Left" Margin="10,87,0,0" Name="label1" VerticalAlignment="Top" Width="109" />
+        <TextBox Height="23" HorizontalAlignment="Left"  Margin="125,89,0,0" Name="cmbSalesType" VerticalAlignment="Top" Width="141" />
+        <DataGrid AutoGenerateColumns="False" Background="Gray" Margin="10,121,369,357" Name="dataGrid1" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding CustomerID}" Header="Customer Id" Width="75" />
+                <DataGridTextColumn Binding="{Binding CustomerName}" Header="Customer Name" Width="100" />               
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Job Card History" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="12,287,0,0" Name="label2" VerticalAlignment="Top" Width="109" />
+        <Label FontWeight="Bold" Content="Customer Service History Details." FontFamily="Calibri" FontSize="24"  Height="37" HorizontalAlignment="Left" Name="label" VerticalAlignment="Top" Width="357" Margin="161,12,0,0" />
+    </Grid>
+</UserControl>

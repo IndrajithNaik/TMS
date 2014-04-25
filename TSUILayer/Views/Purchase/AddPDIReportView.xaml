@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="TSUILayer.Views.Purchase.AddPDIReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="680" d:DesignWidth="900" Loaded="UserControl_Loaded">
+    <Grid Height="650" Width="851">
+        <Label Content="FIP Number" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="424,136,0,0" Name="label19" VerticalAlignment="Top" />
+        <Label Content="Alternate Maker" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="424,166,0,0" Name="label20" VerticalAlignment="Top" />
+        <Label Content="Starter Motor Maker" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="424,202,0,0" Name="label21" VerticalAlignment="Top" Width="132" />
+        <Label Content="PDI Hours" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="424,236,0,0" Name="label22" VerticalAlignment="Top" />
+        <Label Content="Tyre Type" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="259,295,0,0" Name="label27" VerticalAlignment="Top" Width="91" />
+        <Label Content="Maker" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="379,293,0,0" Name="label32" VerticalAlignment="Top" Width="91" />
+        <Label Content="Size" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="497,292,0,0" Name="label29" VerticalAlignment="Top" Width="91" />
+        <Label Content="Serial No" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="604,292,0,0" Name="label30" VerticalAlignment="Top" Width="91" />
+        <Label Content="Remarks" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="728,293,0,0" Name="label31" VerticalAlignment="Top" Width="91" />
+        
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="613,136,0,0" Name="txtFIPNo" VerticalAlignment="Top" Width="170" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="613,168,0,0" Name="txtAlternateMaker" VerticalAlignment="Top" Width="170" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="613,204,0,0" Name="txtStarterMotorMake" VerticalAlignment="Top" Width="170" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="614,236,0,0" Name="txtPDIHours" VerticalAlignment="Top" Width="169" />
+
+        <Label Content="Front (Left)" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="259,340,0,0" Name="label28" VerticalAlignment="Top" />
+        <Label Content="Front (Right)" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="259,378,0,0" Name="label23" VerticalAlignment="Top" />
+        <Label Content="Rear (Left)" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="259,416,0,0" Name="label24" VerticalAlignment="Top" />
+        <Label Content="Rear (Right)" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="259,454,0,0" Name="label25" VerticalAlignment="Top" />
+
+        <Grid Margin="376,325,10,71" Name="gridTyreDetails">
+
+            <TextBox Height="26" HorizontalAlignment="Left" Name="txtFrontLeftMaker" VerticalAlignment="Top" Width="91" Margin="4,10,0,0" />
+            <TextBox Height="26" HorizontalAlignment="Left" Name="txtFrontLeftSize" VerticalAlignment="Top" Width="94" Margin="113,10,0,0" />
+            <TextBox Height="26" HorizontalAlignment="Left" Name="txtFrontLeftSerialNo" VerticalAlignment="Top" Width="96" Margin="228,10,0,0" />
+            <TextBox Height="26" HorizontalAlignment="Left" Name="txtFrontLeftRemarks" VerticalAlignment="Top" Width="112" Margin="343,10,0,0" />
+
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="4,50,0,0" Name="txtFrontRightMaker" VerticalAlignment="Top" Width="91" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="113,50,0,0" Name="txtFrontRightSize" VerticalAlignment="Top" Width="94" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="228,50,0,0" Name="txtFrontRightSerialNo" VerticalAlignment="Top" Width="96" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="343,50,0,0" Name="txtFrontRightRemarks" VerticalAlignment="Top" Width="112" />
+
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="4,93,0,0" Name="txtRearLeftMaker" VerticalAlignment="Top" Width="91" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="113,93,0,0" Name="txtRearLeftSize" VerticalAlignment="Top" Width="94" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="228,93,0,0" Name="txtRearLeftSerialNo" VerticalAlignment="Top" Width="96" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="343,93,0,0" Name="txtRearLeftRemarks" VerticalAlignment="Top" Width="112" />
+
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="4,131,0,0" Name="txtRearRightMaker" VerticalAlignment="Top" Width="91" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="113,131,0,0" Name="txtRearRightSize" VerticalAlignment="Top" Width="94" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="228,131,0,0" Name="txtRearRightSerialNo" VerticalAlignment="Top" Width="96" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="343,131,0,0" Name="txtRearRightRemarks" VerticalAlignment="Top" Width="112" />
+
+            <Label Content="Maker" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="6,171,0,0" Name="label33" VerticalAlignment="Top" Width="91" />
+            <Label Content="Size" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="120,171,0,0" Name="label34" VerticalAlignment="Top" Width="91" />
+            <Label Content="Serial No" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="235,171,0,0" Name="label35" VerticalAlignment="Top" Width="91" />
+            <Label Content="Remarks" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="350,171,0,0" Name="label36" VerticalAlignment="Top" Width="91" />
+
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="4,201,0,0"  Name="txtBatteryMaker" VerticalAlignment="Top" Width="91" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="113,201,0,0" Name="txtBatterySize" VerticalAlignment="Top" Width="94" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="228,201,0,0" Name="txtBatterySerialNo" VerticalAlignment="Top" Width="96" />
+            <TextBox Height="26" HorizontalAlignment="Left" Margin="343,201,0,0" Name="txtBatteryRemarks" VerticalAlignment="Top" Width="112" />
+        </Grid>
+        <Label Content="Battery Details" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="259,527,0,0" Name="label26" VerticalAlignment="Top" />
+        
+        <Button Content="Save" FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="592,584,0,0" Name="btnSaveTractorPDIReport" VerticalAlignment="Top" Width="81" Click="btnSaveTractorPDIReport_Click" IsEnabled="False">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#81BED9E8" Direction="270" ShadowDepth="4" />
+            </Button.Effect>
+        </Button>
+        <Button Content="Close" FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="728,584,0,0" Name="btnClose" VerticalAlignment="Top" Width="94" Click="btnClose_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#81BED9E8" Direction="270" ShadowDepth="4" />
+            </Button.Effect>
+        </Button>
+        <Label Content="Pre Delivary Inspection(PDI) Report" FontSize="30" FontWeight="Bold" Height="55" HorizontalAlignment="Left" Margin="227,-4,0,0" Name="label1" VerticalAlignment="Top" Width="524" />
+        <Label Content="Invoice Number" FontWeight="Bold" Height="26" HorizontalAlignment="Left" Margin="12,73,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="Invoice Date" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="14,107,0,0" Name="label4" VerticalAlignment="Top" Width="90" />
+        <Label Content="Date of Entry" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="11,142,0,0" Name="label5" VerticalAlignment="Top" Width="107" />
+        <Label Content="Tractor Model" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="425,73,0,0" Name="label3" VerticalAlignment="Top" Width="89" />
+        <Label Content="Engine Number" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="15,177,0,0" Name="label14" VerticalAlignment="Top" />
+        <Label Content="Chassis Number" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="11,215,0,0" Name="label17" VerticalAlignment="Top" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="201,73,0,0" Name="txtInvoiceNo" VerticalAlignment="Top" Width="166" IsReadOnly="True" />
+        <DatePicker Height="26" HorizontalAlignment="Left" Margin="201,107,0,0" Name="dateOfInvoice" VerticalAlignment="Top" Width="165" IsEnabled="False"/>
+        <DatePicker Height="26" HorizontalAlignment="Left" Margin="201,142,0,0" Name="dateOfUpdate" VerticalAlignment="Top" Width="165" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="614,73,0,0" Name="txtTractorModel" VerticalAlignment="Top" Width="166" IsReadOnly="True" />
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="613,103,0,0" Name="txtTractorSpecification" VerticalAlignment="Top" Width="166" IsReadOnly="True" />
+        <ComboBox Height="26" HorizontalAlignment="Left" Margin="200,178,0,0" Name="cmbEngineNos" VerticalAlignment="Top" Width="166" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+        <TextBox Height="26" HorizontalAlignment="Left" Margin="201,215,0,0" Name="txtChassisNo" VerticalAlignment="Top" Width="169" IsReadOnly="True" />
+        <Label Content="Tractor Specification" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="424,101,0,0" Name="label6" VerticalAlignment="Top" Width="133" />
+        <DataGrid AutoGenerateColumns="False" Height="274" HorizontalAlignment="Left" Margin="14,329,0,0" Name="dataGridTractorInvoices" VerticalAlignment="Top" Width="200" IsReadOnly="True" VerticalScrollBarVisibility="Auto" SelectedCellsChanged="dataGridTractorInvoices_SelectedCellsChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding InvoiceNumber}" Width="100" Header="Invoice Number"/>
+                <DataGridTextColumn Binding="{Binding InvoiceDate}" Width="90*" Header="Date"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Tractor Purchase Invoices" Foreground="Blue" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="14,294,0,0" Name="label7" VerticalAlignment="Top" Width="149" />
+    </Grid>
+</UserControl>

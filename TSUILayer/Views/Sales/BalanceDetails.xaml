@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="TSUILayer.Views.Sales.BalanceDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="373" d:DesignWidth="439" Loaded="UserControl_Loaded">
+    <Grid Width="444" Height="395">
+        <Label Content="Enter Invoice Number" Height="28" HorizontalAlignment="Left" Margin="34,96,0,0" Name="label1" VerticalAlignment="Top" Width="128" />
+        <Label Content="Amount Paid" Height="28" HorizontalAlignment="Left" Margin="34,197,0,0" Name="label2" VerticalAlignment="Top" Width="128" />
+        <Label Content="Select Date" Height="28" HorizontalAlignment="Left" Margin="34,248,0,0" Name="label3" VerticalAlignment="Top" Width="128" />
+        <DatePicker Height="25" HorizontalAlignment="Right" Margin="0,251,154,0" Name="datePaid" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="170,199,0,0" Name="txtAmountPaid" VerticalAlignment="Top" Width="120" />
+        <Label Content="Balance Amount" Height="28" HorizontalAlignment="Left" Margin="34,146,0,0" Name="label4" VerticalAlignment="Top" Width="128" />
+        <Label Content="" Height="28" HorizontalAlignment="Left" Margin="170,146,0,0" Name="lblBalance" VerticalAlignment="Top" Width="120" />
+        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="170,317,0,0" Name="btnSave" VerticalAlignment="Top" Width="75" Click="btnSave_Click" />
+        <Button Content="Close" Height="23" HorizontalAlignment="Left" Margin="294,317,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
+        <ComboBox HorizontalAlignment="Left" Margin="170,96,0,0" VerticalAlignment="Top" Width="145" Height="28" Name="cmbInvoices" SelectionChanged="cmbInvoices_SelectionChanged"/>
+    </Grid>
+</UserControl>

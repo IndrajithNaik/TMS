@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="TSUILayer.Views.Admin.AddTractorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="775" d:DesignWidth="925" Loaded="UserControl_Loaded">
+    <Grid Height="775" Width="1000" Name="addTractors">
+        <Grid.RowDefinitions>
+            <RowDefinition>
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="399*">
+            </ColumnDefinition>            
+        </Grid.ColumnDefinitions>
+        <DataGrid Background="Gray"  Name="gridTractors" Margin="9,208,497,375" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="gridTractors_MouseDoubleClick" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding SlNo}" Width="50*" Header="Sl No."/>
+                <DataGridTextColumn Binding="{Binding SupplierName}" Width="200*" Header="Supplier Name"/>
+                <DataGridTextColumn Binding="{Binding TractorModel}" Width="150*" Header="Model"/>
+                <DataGridTextColumn Binding="{Binding TractorShowRoomPrice}" Width="200*" Header="Show Room Price"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--<Label Height="28" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Margin="533,206,0,0" Name="label1" VerticalAlignment="Top" Content="Tractor Make"/>-->
+        <Label Height="28" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Margin="535,239,0,0" Name="label2" VerticalAlignment="Top" Content="Tractor Model"/>
+        <Label Height="28" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Margin="534,281,0,0" Name="label3" VerticalAlignment="Top" Content="Tractor Showroom Rate"/>
+        <Label Height="28" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Margin="533,327,0,0" Name="label4" VerticalAlignment="Top" Content="Tractor Image"/>
+        <Label Content="Select Supplier" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="536,205,0,0" Name="label5" VerticalAlignment="Top" Width="114" />
+        <Label Content="Tractor Model" FontWeight="Bold" Height="24" HorizontalAlignment="Left" Margin="12,125,0,0" Name="label6" VerticalAlignment="Top" Width="114" />
+
+
+
+        <!--<TextBox Height="19" HorizontalAlignment="Left" Margin="177,236,0,0" Name="txtStatus" VerticalAlignment="Top" Width="120" Grid.Column="1" />-->
+
+
+
+
+
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="151,125,0,0" Name="txtTractorModelSearch" VerticalAlignment="Top" Width="157" />
+        <Button Content="Search Tractor" Height="23" HorizontalAlignment="Left" Margin="336,124,0,0" Name="btnSearchTractor" VerticalAlignment="Top" Width="108" Grid.ColumnSpan="2" Click="btnSearchTractor_Click" >
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <!--<TextBox Height="28" HorizontalAlignment="Left" Margin="713,206,0,0" Name="txtFullName" VerticalAlignment="Top" Width="172" />-->
+        <ComboBox Height="28" HorizontalAlignment="Left" Margin="716,205,0,0" x:Name="cmbSupplier" VerticalAlignment="Top" Width="172" IsEditable="True" DisplayMemberPath="Name" SelectedValuePath="Id">
+            <!--<ComboBoxItem>SONALICA</ComboBoxItem>-->
+        </ComboBox>
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="716,0,0,508" Name="txtTractorModel" VerticalAlignment="Bottom" Width="172" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="716,281,0,0" Name="txtShowRoomRate" VerticalAlignment="Top" Width="172" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="716,330,0,0" Name="txtTractorImagePath" VerticalAlignment="Top" Width="172" />
+        <Button Content="." Height="28" HorizontalAlignment="Left" Margin="904,330,0,0" Name="btnChooseImage" VerticalAlignment="Top" Width="17" Click="btnChooseImage_Click" ></Button>
+        <StackPanel HorizontalAlignment="Left" Margin="12,420,0,0" Name="imgStackPanel" VerticalAlignment="Top" />
+        <Button Content="Update" FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="677,452,0,0" Name="btnUpdateTractor" VerticalAlignment="Top" Width="75" Click="btnUpdateTractor_Click">
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Save" FontWeight="Bold" Height="23" HorizontalAlignment="Left" Margin="535,452,0,0" Name="btnAddTractor" VerticalAlignment="Top" Width="75" Click="btnAddTractor_Click" >
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button FontWeight="Bold" Content="Close" Height="23" HorizontalAlignment="Left" Margin="813,452,0,0" Name="btnCloseTractor" VerticalAlignment="Top" Width="75" Click="btnCloseTractor_Click">
+            <Button.Effect>
+                <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                    <GradientStop Color="#FF004493" Offset="0.905" />
+                    <GradientStop Color="#FF61B3EB" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Add Tractor Details" FontSize="32" FontWeight="Bold" Height="57" HorizontalAlignment="Left" Margin="175,25,0,0" Name="lblHeading" VerticalAlignment="Top" Width="328" />
+        <Label Content="Tractor Status" FontSize="14" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="532,373,0,0" Name="label8" VerticalAlignment="Top" Width="116" />
+        <ComboBox Height="28" HorizontalAlignment="Right" Margin="0,0,112,374" Name="cmbTractorStatus" VerticalAlignment="Bottom" Width="172" SelectedValuePath="Id" DisplayMemberPath="Name"/>
+        <!--<Image Height="159" HorizontalAlignment="Left" Margin="12,445,0,0" Name="imagTractor" Stretch="Fill" VerticalAlignment="Top" Width="377" />-->
+    </Grid>
+</UserControl>

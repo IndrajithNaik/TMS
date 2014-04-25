@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="TSUILayer.Views.Reports.ReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             xmlns:rv="clr-namespace:Microsoft.Reporting.Winforms;assembly=Microsoft.Reportviewer.Winforms"
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid Height="600" Width="600">
+        <DataGrid Background="Gray"  Name="gridSparesAdded" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" Margin="12,263,35,12">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding SpareId}" Width="75" Header="Spare Id"/>
+                <!--<DataGridTextColumn Binding="{Binding supplierName}" Width="90" Header="Supplier Name"/>-->
+                <DataGridTextColumn Binding="{Binding SparePartCode}" Width="100" Header="Spare Part Code"/>
+                <DataGridTextColumn Binding="{Binding SparePartDescription}" Width="100" Header=" Part Description"/>
+                <!--<DataGridTextColumn Binding="{Binding SpareUnitPriceForSale}" Width="120" Header="Unit Price(M.R.P)"/>-->
+                <DataGridTextColumn Binding="{Binding Quantity}" Width="120" Header="Quantity"/>
+                <!--<DataGridTextColumn Binding="{Binding VatOnSubTotal}" Width="120" Header="Vat(In %)"/>
+                <DataGridTextColumn Binding="{Binding SubTotal}" Width="120" Header="Sub Total"/>
+                <DataGridTextColumn Binding="{Binding GrandTotal}" Width="120" Header="Grand Total"/>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Print" Height="23" HorizontalAlignment="Left" Margin="490,234,0,0" Name="btnPrintStockScarcityreport" VerticalAlignment="Top" Width="75" Click="btnPrintStockScarcityreport_Click" />
+        <Button Content="Export To XL Sheet" Height="23" HorizontalAlignment="Left" Margin="356,234,0,0" Name="btnExportToXLSheet" VerticalAlignment="Top" Width="115" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="137,84,0,0" Name="fromDate" VerticalAlignment="Top" Width="115" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="137,128,0,0" Name="toDate" VerticalAlignment="Top" Width="115" />
+        <Label Content="From Date" Height="28" HorizontalAlignment="Left" Margin="44,84,0,0" Name="lblToDate" VerticalAlignment="Top" Width="76" />
+        <Label Content="To Date" Height="28" HorizontalAlignment="Left" Margin="44,127,0,0" Name="lblFromDate" VerticalAlignment="Top" Width="76" />
+        <Button Content="View Sales Report" Height="23" HorizontalAlignment="Left" Margin="277,172,0,0" Name="button1" VerticalAlignment="Top" Width="115" />
+        <Label Content="Sales Type" Height="28" HorizontalAlignment="Left" Margin="44,172,0,0" Name="label1" VerticalAlignment="Top" Width="68" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="132,172,0,0" Name="cmbSalesType" VerticalAlignment="Top" Width="120" IsEditable="True" />
+        <Label Content="Sales Report" FontWeight="Bold" FontSize="30" Height="48" HorizontalAlignment="Left" Margin="174,12,0,0" Name="label2" VerticalAlignment="Top" Width="244" />
+    </Grid>
+</UserControl>

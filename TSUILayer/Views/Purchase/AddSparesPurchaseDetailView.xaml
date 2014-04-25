@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="TSUILayer.Views.AddSpearsPurchaseDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Loaded="UserControl_Loaded" d:DesignHeight="702" d:DesignWidth="997">
+    <DockPanel ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+
+        <Grid Height="714" Width="997" Name="gridSparePurchase">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*">
+                </RowDefinition>
+                <RowDefinition Height="285*" />
+                <RowDefinition Height="291*" />
+                <RowDefinition Height="88*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="143*">
+                </ColumnDefinition>
+                <ColumnDefinition Width="282*" />
+                <ColumnDefinition Width="0*"></ColumnDefinition>
+                <ColumnDefinition Width="552*" />
+                <ColumnDefinition Width="20*" />
+            </Grid.ColumnDefinitions>
+            <DataGrid Grid.Row="1" Background="Gray"  Name="gridSparesAdded" Grid.ColumnSpan="4" AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto" Margin="38,221,350,237" Grid.RowSpan="2" CanUserResizeRows="False" CanUserReorderColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding SPARE_PART.SPARE_PART_CODE}" Width="100*" Header="Spare Part Code"/>
+                    <DataGridTextColumn Binding="{Binding SUPPLIER.SUPPLIER_NAME}" Width="100*" Header="Supplier Name"/>
+                    <DataGridTextColumn Binding="{Binding SPARE_PART.SPARE_PART_DESCRIPTION}" Width="100*" Header=" Part Description"/>                    
+                    <DataGridTextColumn Binding="{Binding Path=dsm}" Width="100*" Header="Unit Price(M.R.P)"/>
+                    <DataGridTextColumn Binding="{Binding QUANTITY}" Width="60*" Header="Quantity"/>
+                    <DataGridTextColumn Binding="{Binding SUB_TOTAL}" Width="120*" Header="Sub Total"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label FontWeight="Bold" Height="26" HorizontalAlignment="Left" Margin="232,111,0,0" Name="label1" VerticalAlignment="Top" Grid.Column="3" Content="Invoice Number" Grid.Row="1" />
+            <TextBox Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="374,110,0,0" Name="txtInvoiceNo" VerticalAlignment="Top" Width="149" Grid.Row="1" />
+            <DatePicker Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="374,145,0,0" Name="dateTimeInvoiceDate" VerticalAlignment="Top" Width="149" Grid.Row="1" />
+            <ComboBox Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="374,194,0,0" Name="cmbSupplier" IsEditable="True"  VerticalAlignment="Top" Width="149" Grid.Row="1" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="cmbSupplier_SelectionChanged" />
+            <TextBox Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="374,238,0,0" Name="txtSparePartCode" VerticalAlignment="Top" Width="149" Grid.Row="1" TextChanged="txtSparePartCode_TextChanged"/>
+            <TextBox Grid.Column="3" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="374,276,0,0" Name="txtPartCodeDescription" VerticalAlignment="Top" Width="149" Grid.RowSpan="2" IsReadOnly="True" />
+            <TextBox Height="28" HorizontalAlignment="Left" Margin="374,65,0,0" Name="txtQuantity" VerticalAlignment="Top" Width="149" Grid.Column="3" Grid.Row="2" KeyUp="txtQuantity_KeyUp"/>
+            <TextBox Height="28" HorizontalAlignment="Left" Margin="373,18,0,0" Name="txtUnitCost" VerticalAlignment="Top" Width="149" Grid.Column="3" Grid.Row="2" IsReadOnly="True" />
+            <TextBox Grid.Row="2" Height="28" HorizontalAlignment="Right" Margin="0,108,30,0" Name="txtSubTotal" VerticalAlignment="Top" Width="149" Grid.Column="3" IsReadOnly="True" />
+            <TextBox Height="28" HorizontalAlignment="Left" Margin="14,248,0,0" Name="txtVatInPercenAmount" VerticalAlignment="Top" Width="119" Grid.Column="3" Grid.Row="2" IsReadOnly="True" />
+            <!--<TextBox Grid.Column="3" Grid.Row="2" Height="28" HorizontalAlignment="Right" Margin="0,152,30,0" Name="txtGrandTotal" VerticalAlignment="Top" Width="149" />-->
+            <TextBox Height="28" HorizontalAlignment="Left" Margin="14,136,0,0" Name="txtExpOnTotalAmount" VerticalAlignment="Top" Width="119" Grid.Row="2" Grid.Column="3" KeyUp="txtExpOnTotalAmount_KeyUp" />
+            <TextBox Height="28" HorizontalAlignment="Left" Margin="14,170,0,0" Name="txtDiscountAmount" VerticalAlignment="Top" Width="119" Grid.Row="2" Grid.Column="3" IsReadOnly="True" />
+            <!--<TextBox Height="24" HorizontalAlignment="Left" Margin="66,287,0,0" Name="txtTotalVATAmount" VerticalAlignment="Top" Width="119" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" />-->
+            <TextBox Height="28" HorizontalAlignment="Left" Margin="14,290,0,0" Name="txtGrandTotalOfInvoice" VerticalAlignment="Top" Width="119" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" IsReadOnly="True" />
+            <Button Content="Add" FontWeight="Bold" Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="281,281,0,0" Name="btnAddSpares" VerticalAlignment="Top" Width="75" Grid.Row="2" Click="btnAddSpares_Click" >
+                <Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Save" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="188,281,0,0" Name="btnSaveAllSparesPurchase" VerticalAlignment="Top" Width="75" Grid.Row="2" Grid.Column="3" Click="btnSaveAllSparesPurchase_Click">
+                <Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label FontWeight="Bold" Content="Invoice Date" Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="232,144,0,0" Name="label4" VerticalAlignment="Top" Width="97" Grid.Row="1" />
+            <Label FontWeight="Bold" Content="Spare Part Code" Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="232,242,0,0" Name="label6" VerticalAlignment="Top" Width="101" Grid.Row="1" />
+            <Label FontWeight="Bold" Content="Search on Invoice" Height="28" HorizontalAlignment="Left" Margin="197,72,0,0" Name="label7" VerticalAlignment="Top" Width="132" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" />
+            <TextBox Name="txtInvoiceSearch" Height="22" HorizontalAlignment="Left" Margin="68,71,0,0" VerticalAlignment="Top" Width="120" Grid.Column="3" Grid.Row="1"/>
+
+            <Button Content="Search" Height="28" HorizontalAlignment="Left" Margin="68,112,0,0" Name="btnSearchInvoice" VerticalAlignment="Top" Width="120" Grid.Column="3" Grid.Row="1" Click="btnSearchInvoice_Click">
+                <Button.Effect>
+                    <DropShadowEffect Color="#81BED9E8" Direction="270" BlurRadius="0" ShadowDepth="4" />
+                </Button.Effect>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label FontWeight="Bold" Content="Select Supplier" Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="231,194,0,0" Name="label9" VerticalAlignment="Top" Width="106" Grid.Row="1" />
+            <Label FontWeight="Bold" Content="Quantity" Grid.Column="3" Height="28" HorizontalAlignment="Left" Margin="232,65,0,0" Name="label10" VerticalAlignment="Top" Width="89" Grid.Row="2" />
+            <Label FontWeight="Bold" Content="Unit Cost" Height="28" HorizontalAlignment="Left" Margin="232,16,0,0" Name="lblUnitCost" VerticalAlignment="Top" Grid.Column="3" Grid.Row="2" />
+            <Label FontWeight="Bold" Content="Sub Total" Height="28" HorizontalAlignment="Left" Margin="232,108,0,0" Name="lblSubTotal" VerticalAlignment="Top" Width="99" Grid.Column="3" Grid.Row="2" />
+            <Label FontWeight="Bold" Content="Vat in Percent" Height="28" HorizontalAlignment="Left" Margin="111,246,0,0" Name="label11" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
+            <!--<Label Content="Total VAT Amount" HorizontalAlignment="Left" Margin="198,285,0,85" Name="label15" Width="111" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" />-->
+            <Label FontWeight="Bold" Content="Total Amount of Invoice" Height="28" HorizontalAlignment="Left" Margin="111,0,0,86" Name="label16" VerticalAlignment="Bottom" Width="165" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" />
+            <Label FontWeight="Bold" Content="Exp On Total Amount" Height="28" HorizontalAlignment="Left" Margin="109,136,0,0" Name="label2" VerticalAlignment="Top" Width="135" Grid.Row="2" Grid.Column="1" />
+            <Label FontWeight="Bold" Content="Discount" Height="26" HorizontalAlignment="Left" Margin="109,172,0,0" Name="label17" VerticalAlignment="Top" Width="90" Grid.Row="2" Grid.Column="1" />
+            <Label FontWeight="Bold" Content="Add Spares Purchase Details." FontFamily="Calibri" FontSize="24"  Height="37" HorizontalAlignment="Left" Name="label18" VerticalAlignment="Top" Width="302" Grid.ColumnSpan="3" Margin="210,0,0,0" Grid.Column="1" Grid.Row="1" />
+            <Label FontWeight="Bold" Content="Part Code Description" Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="230,276,0,0" Name="label14" VerticalAlignment="Top" Width="139" Grid.Column="3" Grid.RowSpan="2" />
+            <!--<Label FontWeight="Bold" Content="Grand Total" Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="234,150,0,0" Name="label13" VerticalAlignment="Top" Width="99" Grid.Column="3" />-->
+            <Label Content="Purchase Type" Foreground="Red" FontWeight="Bold" Grid.Row="1" Height="27" HorizontalAlignment="Left" Margin="230,68,0,0" Name="label12" VerticalAlignment="Top" Grid.Column="3" Width="108" />
+
+            <RadioButton Content="Spare Parts" Grid.Column="3" Grid.Row="1" Height="19" HorizontalAlignment="Left" Margin="351,72,0,0" Name="radioButtonSpares" VerticalAlignment="Top" Width="91" Checked="radioButtonSpares_Checked"  />
+            <RadioButton Content="Lubricants" Grid.Row="1" Height="24" HorizontalAlignment="Left" Margin="448,72,0,0" Name="radioButtonLubricants" VerticalAlignment="Top" Width="91" Grid.Column="3" Checked="radioButtonLubricants_Checked"/>
+            <DataGrid AutoGenerateColumns="False" Background="Gray" Grid.ColumnSpan="2" Grid.Row="1" Margin="38,72,104,103" Name="dataGridInvoices" VerticalScrollBarVisibility="Auto" CanUserResizeRows="False" CanUserReorderColumns="False" IsReadOnly="True" SelectedCellsChanged="dataGridInvoices_SelectedCellsChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding InvoiceNumber}" Header="Invoice" Width="75*" />
+                    <DataGridTextColumn Binding="{Binding InvoiceDate}" Header="Date" Width="90" />
+                    <DataGridTextColumn Binding="{Binding GrandTotal}" Header="Total Amount" Width="100" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="236,250,0,0" Name="lblVatInPercentage" VerticalAlignment="Top" Width="40" Grid.Column="1"/>
+            <Label Grid.Row="2" Height="27" HorizontalAlignment="Left" Margin="236,175,0,0" Name="lblDiscountInPercentage" VerticalAlignment="Top" Width="44" Grid.Column="1" />
+            <Label Content="Total :" Foreground="Red" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="254,91,0,0" Name="label13" VerticalAlignment="Top" Width="47" Grid.ColumnSpan="3" />
+            <Label Grid.Column="1" Grid.Row="2" Height="28" Margin="152,91,0,0" Name="lblUnitPrice" VerticalAlignment="Top" Width="47" Visibility="Hidden"/>
+            <Label Content="" Grid.Column="3" Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="68,90,0,0" Name="lblTotalAmount" VerticalAlignment="Top" Width="120" />
+            <Button Content="Update" FontWeight="Bold" Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="374,281,0,0" Name="btnUpdate" VerticalAlignment="Top" Width="75" Grid.Column="3" Click="btnUpdate_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="0" Color="#81BED9E8" Direction="270" ShadowDepth="4" />
+                </Button.Effect>
+            </Button>
+            <TextBox Grid.Column="3" Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="14,211,0,0" Name="txtAmountAfterDiscount" VerticalAlignment="Top" Width="119" IsReadOnly="True" />
+            <Label Content="Amount after Discount" FontWeight="Bold" Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="109,211,0,0" Name="label15" VerticalAlignment="Top" Width="146" Grid.Column="1" />
+            <Button Content="View Invoice" FontWeight="Bold" Grid.Row="2" Height="28" HorizontalAlignment="Left" Margin="468,281,0,0" Name="btnViewInvoice" VerticalAlignment="Top" Width="84" Grid.Column="3" Click="btnViewInvoice_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3A87BE" Offset="0.367" />
+                        <GradientStop Color="#FF004493" Offset="0.905" />
+                        <GradientStop Color="#FF61B3EB" Offset="0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="0" Color="#81BED9E8" Direction="270" ShadowDepth="4" />
+                </Button.Effect>
+            </Button>
+            <ListBox Grid.Column="3" Name="lstSugesstions" HorizontalAlignment="Left" Height="114" Margin="373,266,0,0" Grid.Row="1" VerticalAlignment="Top" Width="150" Grid.RowSpan="2" Visibility="Collapsed" SelectionChanged="lstSugesstions_SelectionChanged"/>
+        </Grid>
+    </DockPanel>
+
+</UserControl>
